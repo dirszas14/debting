@@ -11,72 +11,91 @@
                       foreach ($fetch_data->result() as $row) {?>
     <!-- Main content -->
     <section class="content container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-person-stalker"></i></span>
+     <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3><?php echo $fetch_data->num_rows(); ?></h3>
 
-            <div class="info-box-content">
-              <span class="info-box-text">Jumlah Debitur</span>
-              <span class="info-box-number"><?php echo $fetch_data->num_rows(); ?><small></small></span>
+              <p>Jumlah Debitur</p>
             </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-checkmark"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Lunas</span>
-              <span class="info-box-number">2</span>
+            <div class="icon">
+              <i class="ion ion-person-stalker"></i>
             </div>
-            <!-- /.info-box-content -->
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
-          <!-- /.info-box -->
         </div>
-        <!-- /.col -->
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>5</h3>
 
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-social-euro"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Terbayar</span>
-              <span class="info-box-number">500000</span>
+              <p>Lunas</p>
             </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="ion ion-social-euro"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Belum Terbayar</span>
-              <span class="info-box-number">2500000</span>
+            <div class="icon">
+              <i class="ion ion-checkmark-round"></i>
             </div>
-            <!-- /.info-box-content -->
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
-          <!-- /.info-box -->
         </div>
-        <!-- /.col -->
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3><?php echo number_format(5000000); ?></h3>
+
+              <p>Terbayar</p>
+            </div>
+            <div class="icon">
+              RP
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3><?php echo number_format(2000000); ?></h3>
+
+              <p>Belum Terbayar</p>
+            </div>
+            <div class="icon">
+              RP
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ./col -->
       </div>
       <div class="row">
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="ion ion-ios-stopwatch"></i></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Jatuh Tempo</span>
-              <span class="info-box-number">1<small></small></span>
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>0</h3>
+
+              <p>Jatuh Tempo</p>
             </div>
+            <div class="icon">
+              <i class="ion ion-close-round"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
         </div>
          <!-- /.col --><?php }}?>
