@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -44,8 +44,8 @@
                           <td><?php echo $row->nik;?></td>
                           <td><?php echo $row->pekerjaan;?></td>
                           <td><?php echo $row->nama_barang;?></td>
-                          <td><?php echo $row->harga_barang;?></td>
-                          <td><?php echo $row->cicilan_min;?></td>
+                          <td><?php echo "Rp.".number_format($row->harga_barang);?></td>
+                          <td><?php echo "Rp.".number_format($row->cicilan_min);?></td>
                           <td><?php echo $row->no_telp;?></td>
                           <td><?php echo $row->email;?></td>
                           <td><?php echo $row->jatuh_tempo;?></td>
