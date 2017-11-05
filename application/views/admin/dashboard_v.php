@@ -6,7 +6,9 @@
         Dashboard
       </h1>
     </section>
-
+<?php 
+  if($fetch_data->num_rows()>0){
+                      foreach ($fetch_data->result() as $row) {?>
     <!-- Main content -->
     <section class="content container-fluid">
       <div class="row">
@@ -16,7 +18,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Jumlah Debitur</span>
-              <span class="info-box-number">5<small></small></span>
+              <span class="info-box-number"><?php echo $fetch_data->num_rows(); ?><small></small></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -77,7 +79,7 @@
             </div>
           </div>
         </div>
-         <!-- /.col -->
+         <!-- /.col --><?php }}?>
         <div class="col-md-6 col-md-offset-3">
             <div id="kalender"></div>
         </div>

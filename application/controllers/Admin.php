@@ -7,7 +7,9 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
-		$this->load->view('admin/dashboard_v');
+		$this->load->model('admin_model');
+		$data['fetch_data']=$this->admin_model->fetch_data();
+		$this->load->view('admin/dashboard_v',$data);
 		$this->load->view('layout/footer');
 	}
 	public function login(){
