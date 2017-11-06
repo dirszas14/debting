@@ -27,16 +27,13 @@
                        <strong>Success!</strong> Data Debitur Telah ditambahkan! 
                        </div>';
                  }?>
-                    <div class="form-group">
-                    <label for="" class="col-md-5 control-label">ID Debitur</label>
-                    <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="" class="col-md-2 control-label">ID Debitur</label>
+                    <div class="col-md-4">
                       <input type="hidden" class="form-control" name="iddebitur" value="" readonly/>
                     </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="" class="col-md-5 control-label">Username</label>
-                    <div class="col-md-3">
+                    <label for="" class="col-md-2 control-label">Username</label>
+                    <div class="col-md-4">
                       <input type="text" class="form-control" name="username">
                        <span class="text-danger"><?php echo form_error("username"); ?></span>
                     </div>
