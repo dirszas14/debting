@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2017 at 06:24 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Nov 06, 2017 at 06:33 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -68,7 +68,9 @@ CREATE TABLE `debitur` (
 --
 
 INSERT INTO `debitur` (`id_debitur`, `username`, `password`, `nama`, `alamat`, `nik`, `pekerjaan`, `nama_barang`, `harga_barang`, `cicilan_min`, `no_telp`, `email`, `jatuh_tempo`) VALUES
-('', 'dirszas14', '082213201235', 'Dirsza Safiro', 'Duren Villa', '41814010058', 'CEO', 'Laptop', 6000000, 700000, '082213201235', 'dirszas14@gmail.com', 3);
+('1', 'dirszas14', '082213201235', 'Dirsza Safiro', 'Duren Villa', '41814010058', 'CEO', 'Laptop', 6000000, 700000, '082213201235', 'dirszas14@gmail.com', 3),
+('2', 'ramanet', '08223322111', 'Rama Febryansyah', 'galanggung yang jalannya nanggung', '4181401005', 'Pagar Ayu ', 'Jet', 7000000, 700000, '08223322111', 'asas@gtmetrix.com', 4),
+('<??>', 'rakahikmah', '911', 'Raka Hikmah Vallen', 'Pulau Reklamasi', '41814010000', 'Pilot', 'Lapangan Golf', 300000000, 10000000, '911', 'rakahikmah@pondokindah.com', 1);
 
 -- --------------------------------------------------------
 

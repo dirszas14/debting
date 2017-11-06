@@ -30,7 +30,7 @@
                     <div class="form-group">
                     <label for="" class="col-md-5 control-label">ID Debitur</label>
                     <div class="col-md-3">
-                      <input type="hidden" class="form-control" name="iddebitur" value="<??>" readonly/>
+                      <input type="hidden" class="form-control" name="iddebitur" value="" readonly/>
                     </div>
                   </div>
 
@@ -80,7 +80,7 @@
                   <div class="form-group">
                     <label for="" class="col-md-2 control-label">No Telp</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="notelp">
+                      <input type="number" class="form-control" name="notelp">
                        <span class="text-danger"><?php echo form_error("notelp"); ?></span>
                     </div>
                     <label for="" class="col-md-2 control-label ">Minimal Cicilan</label>
