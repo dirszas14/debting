@@ -7,8 +7,7 @@
       </h1>
     </section>
 <?php 
-  if($fetch_data->num_rows()>0){
-                      foreach ($fetch_data->result() as $row) {?>
+  if($fetch_data->num_rows()>0){?>
     <!-- Main content -->
     <section class="content container-fluid">
      <div class="row">
@@ -23,7 +22,7 @@
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="<?=site_url('admin/datadebitur')?>" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -98,7 +97,7 @@
             </a>
           </div>
         </div>
-         <!-- /.col --><?php }}?>
+         <!-- /.col --><?php }?>
         <div class="col-md-6 col-md-offset-3">
             <div id="kalender"></div>
         </div>

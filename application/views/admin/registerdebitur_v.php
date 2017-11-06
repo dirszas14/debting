@@ -30,7 +30,7 @@
                     <div class="form-group">
                     <label for="" class="col-md-5 control-label">ID Debitur</label>
                     <div class="col-md-3">
-                      <input type="hidden" class="form-control" name="iddebitur" value="<?= $kodeunik; ?>" readonly/>
+                      <input type="hidden" class="form-control" name="iddebitur" value="<??>" readonly/>
                     </div>
                   </div>
 
@@ -61,14 +61,14 @@
                     </div>
                     <label for="" class="col-md-2 control-label">Harga Barang</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="harga_barang">
+                      <input type="number" class="form-control" name="harga_barang">
                        <span class="text-danger"><?php echo form_error("harga_barang"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="" class="col-md-2 control-label">NIK</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="nik">
+                      <input type="number" class="form-control" name="nik">
                        <span class="text-danger"><?php echo form_error("nik"); ?></span>
                     </div>
                     <label for="" class="col-md-2 control-label ">Jatuh Tempo(Hari)</label>

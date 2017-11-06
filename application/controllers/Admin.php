@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 	public function form_validation(){
-	$data['kodeunik'] = $this->admin_model->kode_otomatis();
+	//$data['kodeunik'] = $this->admin_model->kode_otomatis();
 	
 	$this->load->library('form_validation');
 	$this->form_validation->set_rules("username", "Username","required");
