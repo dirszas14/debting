@@ -6,8 +6,6 @@
         Dashboard
       </h1>
     </section>
-<?php 
-  if($fetch_data->num_rows()>0){?>
     <!-- Main content -->
     <section class="content container-fluid">
      <div class="row">
@@ -15,8 +13,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo $fetch_data->num_rows(); ?></h3>
-
+              <h3>4</h3>
               <p>Jumlah Debitur</p>
             </div>
             <div class="icon">
@@ -33,7 +30,6 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3>5</h3>
-
               <p>Lunas</p>
             </div>
             <div class="icon">
@@ -97,7 +93,6 @@
             </a>
           </div>
         </div>
-         <!-- /.col --><?php }?>
         <div class="col-md-6 col-md-offset-3">
             <div id="kalender"></div>
         </div>

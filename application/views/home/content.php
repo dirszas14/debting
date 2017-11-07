@@ -49,34 +49,32 @@
 
 	<div class="row">
 		<div class="col-md-4">
-	    <div class="thumbnail">
-	      <img src="..." alt="...">
-	      <div class="caption">
-	        <h3>Thumbnail label</h3>
-	        <p>...</p>
-	        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-	      </div>
-	    </div>
+	      <h3 align="center">Alamat Kami</h3>
+	      <table class="table">
+	      	<tr>
+	      		<td><h4>Lokasi</h4></td>
+	      		<td></td>
+	      	</tr>
+	      	<tr>
+	      		<td><h4>No Telepon</h4></td>
+	      		<td></td>
+	      	</tr>
+	      </table>
   		</div>
   		<div class="col-md-4">
-	    <div class="thumbnail">
-	      <img src="..." alt="...">
-	      <div class="caption">
-	        <h3>Thumbnail label</h3>
-	        <p>...</p>
-	        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+	      <h3 align="center">Social Media</h3>
+	      <div align="center">
+	      	<i class="fa fa-facebook fa-5x" aria-hidden="true"></i> &nbsp;&nbsp;
+		    <i class="fa fa-twitter fa-5x" aria-hidden="true"></i> &nbsp;&nbsp;
+		    <i class="fa fa-google-plus fa-5x" aria-hidden="true"></i>
 	      </div>
-	    </div>
-  		</div>
+	      
+  		</div> 
   		<div class="col-md-4">
-	    <div class="thumbnail">
-	      <img src="..." alt="...">
-	      <div class="caption">
-	        <h3>Thumbnail label</h3>
-	        <p>...</p>
-	        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-	      </div>
-	    </div>
+	   	  <h3 align="center">Lorem Ipsum</h3>
+	   	  <p align="justifiy">
+	   	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam animi saepe iste quas accusamus magnam, molestias voluptas suscipit! Id consequatur iste placeat aspernatur pariatur nisi doloremque quo tempore ipsa distinctio.
+	   	  </p>
   		</div>
 	</div>
 

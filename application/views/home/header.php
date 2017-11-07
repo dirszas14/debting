@@ -26,7 +26,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
-              <a href="<?=site_url('');?>" class="btn btn-success" role="button">Login</a>
+            <a href="<?=site_url('login')?>" class="btn btn-success">Login</a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
