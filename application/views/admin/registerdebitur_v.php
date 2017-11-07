@@ -21,16 +21,11 @@
             <div class="box-body" style="">
               <div class="row">
                <div class="col-md-12"> 
-                <form action="<?php echo base_url()?>admin/form_validation" class="form-horizontal" method="post">
-                 <?php if ($this->uri->segment(2)=="inserted") {
-                   echo '<div class="alert alert-success">
-                       <strong>Success!</strong> Data Debitur Telah ditambahkan! 
-                       </div>';
-                 }?>
-                  <div class="form-group">
+                <?php echo form_open('admin/registerdebitur',array('class'=>'form-horizontal','method'=>'post')); ?>  
+                 <div class="form-group">
                     <label for="" class="col-md-2 control-label">ID Debitur</label>
                     <div class="col-md-4">
-                      <input type="hidden" class="form-control" name="iddebitur" value="" readonly/>
+                      <input type="text" class="form-control" name="iddebitur" value="<?=$kddebitur?>" readonly/>
                     </div>
                     <label for="" class="col-md-2 control-label">Username</label>
                     <div class="col-md-4">
@@ -104,7 +99,7 @@
                     <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
                     <input type="reset" class="btn btn-danger" name="reset" value="Batal">
                   </div>
-                </form>
+                <?php echo form_close(); ?>
                </div>
               </div>
             </div>
