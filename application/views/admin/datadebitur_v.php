@@ -12,11 +12,23 @@
     <!-- Main content -->
     <section class="content container-fluid">
       <div class="row">
-        <?php if ($this->session->flashdata('info')): ?>
+        <?php if ($this->session->flashdata('infoinsert')): ?>
           <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h4><i class="icon fa fa-check"></i> Info!</h4>
             Berhasil Mendaftar Debitur
+          </div>
+        <?php elseif ($this->session->flashdata('infoedit')): ?>
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Info!</h4>
+            Berhasil Mengubah Debitur
+          </div>
+         <?php elseif ($this->session->flashdata('infodelete')): ?>  
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Info!</h4>
+            Berhasil Mengedit Debitur
           </div>
         <?php endif ?>
         <div class="col-md-12">
@@ -54,17 +66,11 @@
                           <td><?php echo $row->alamat;?></td>
                           <td><?php echo $row->no_telp;?></td>
                           <td><?php echo $row->email;?></td>
-                          <td>
-                            <a href="" class="btn btn-info">Detail</a>
-                            <a href="" class="btn btn-warning">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                          <td class="col-md-3">
+                            <a href="<?php echo base_url("admin/detaildebitur/$row->id_debitur") ?>" class="btn btn-info">Detail</a>
+                            <a href="<?php echo base_url("admin/editdebitur/$row->id_debitur") ?>" class="btn btn-warning">Edit</a>
+                            <a href="<?php echo base_url("admin/deletedebitur/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
                           </td>
-                          <!-- <td><?php echo $row->username;?></td> -->
-                          <!-- <td><?php echo $row->pekerjaan;?></td> -->
-                          <!-- <td><?php echo $row->nama_barang;?></td> -->
-                          <!-- <td><?php echo "Rp.".number_format($row->harga_barang);?></td> -->
-                          <!-- <td><?php echo "Rp.".number_format($row->cicilan_min);?></td> -->
-                          <!-- <td><?php echo $row->jatuh_tempo;?></td> -->
                         </tr>
                       <?php endforeach; ?>
                 </tbody>
