@@ -6,7 +6,6 @@
         Register Debitur
       </h1>
     </section>
-
     <!-- Main content -->
     <section class="content container-fluid">
       <div class="row">
@@ -21,78 +20,77 @@
             <div class="box-body" style="">
               <div class="row">
                <div class="col-md-12"> 
-                <?php echo form_open('admin/registerdebitur',array('class'=>'form-horizontal','method'=>'post')); ?>  
-                 <div class="form-group">
-                    <label for="" class="col-md-2 control-label">ID Debitur</label>
+                <?php echo form_open('admin/registerdebitur',array('class'=>'form-horizontal','method'=>'post')); ?> <div class="form-group">
+                    <label for="id_debitur" class="col-md-2 control-label">ID Debitur</label>
                     <div class="col-md-4">
                       <input type="text" class="form-control" name="iddebitur" value="<?=$kddebitur?>" readonly/>
                     </div>
-                    <label for="" class="col-md-2 control-label">Username</label>
+                    <label for="username" class="col-md-2 control-label">Username</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="username">
+                      <input type="text" class="form-control" name="username" value="<?php echo set_value('username') ?>" placeholder="Username debitur">
                        <span class="text-danger"><?php echo form_error("username"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="" class="col-md-2 control-label ">Nama</label>
+                    <label for="nama" class="col-md-2 control-label">Nama</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="nama">
+                      <input type="text" class="form-control" name="nama" value="<?php echo set_value('nama') ?>" placeholder="Masukan nama debitur">
                       <span class="text-danger"><?php echo form_error("nama"); ?></span>
                     </div>
-                    <label for="" class="col-md-2 control-label ">Nama Barang</label>
+                    <label for="nik" class="col-md-2 control-label">NIK</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="nama_barang">
-                       <span class="text-danger"><?php echo form_error("nama_barang"); ?></span>
+                      <input type="text" class="form-control" name="nik" value="<?php echo set_value('nik') ?>" placeholder="Nomor induk keterangan">
+                       <span class="text-danger"><?php echo form_error("nik"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="" class="col-md-2 control-label">Alamat</label>
+                    <label for="alamat" class="col-md-2 control-label">Alamat</label>
                     <div class="col-md-4">
-                      <textarea name="alamat" class="form-control"></textarea>
+                      <textarea name="alamat" class="form-control"  placeholder="Masukan alamat debitur"><?php echo set_value('alamat') ?></textarea>
                        <span class="text-danger"><?php echo form_error("alamat"); ?></span>
                     </div>
-                    <label for="" class="col-md-2 control-label">Harga Barang</label>
+                    <label for="notelp" class="col-md-2 control-label">No Telp</label>
                     <div class="col-md-4">
-                      <input type="number" class="form-control" name="harga_barang">
+                      <input type="text" class="form-control" name="notelp" value="<?php echo set_value('notelp') ?>" placeholder="Nomor telepon debitur">
+                       <span class="text-danger"><?php echo form_error("notelp"); ?></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="col-md-2 control-label">Email</label>
+                    <div class="col-md-4">
+                      <input type="email" class="form-control" name="email" value="<?php echo set_value('email') ?>" placeholder="Alamat email debitur">
+                       <span class="text-danger"><?php echo form_error("email"); ?></span>
+                    </div>
+                     <label for="pekerjaan" class="col-md-2 control-label">Pekerjaan</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="pekerjaan" value="<?php echo set_value('pekerjaan') ?>" placeholder="Pekerjaan">
+                       <span class="text-danger"><?php echo form_error("pekerjaan"); ?></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="nama_barang" class="col-md-2 control-label ">Nama Barang</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="nama_barang" value="<?php echo set_value('nama_barang') ?>" placeholder="Nama barang debitur">
+                       <span class="text-danger"><?php echo form_error("nama_barang"); ?></span>
+                    </div>
+                     <label for="harga_barang" class="col-md-2 control-label">Harga Barang</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="harga_barang" value="<?php echo set_value('harga_barang') ?>" placeholder="Hara barang">
                        <span class="text-danger"><?php echo form_error("harga_barang"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="" class="col-md-2 control-label">NIK</label>
+                    <label for="cicilan_min" class="col-md-2 control-label ">Minimal Cicilan</label>
                     <div class="col-md-4">
-                      <input type="number" class="form-control" name="nik">
-                       <span class="text-danger"><?php echo form_error("nik"); ?></span>
-                    </div>
-                    <label for="" class="col-md-2 control-label ">Jatuh Tempo(Hari)</label>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" name="jatuh_tempo">
-                       <span class="text-danger"><?php echo form_error("jatuh_tempo"); ?></span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="" class="col-md-2 control-label">No Telp</label>
-                    <div class="col-md-4">
-                      <input type="number" class="form-control" name="notelp">
-                       <span class="text-danger"><?php echo form_error("notelp"); ?></span>
-                    </div>
-                    <label for="" class="col-md-2 control-label ">Minimal Cicilan</label>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" name="cicilan_min">
+                      <input type="text" class="form-control" name="cicilan_min" value="<?php echo set_value('cicilan_min') ?>" placeholder="Minimal cicilan bayar">
                        <span class="text-danger"><?php echo form_error("cicilan_min"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="" class="col-md-2 control-label">Email</label>
+                    <label for="jatuh_tempo" class="col-md-2 control-label ">Jatuh Tempo(Hari)</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="email">
-                       <span class="text-danger"><?php echo form_error("email"); ?></span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="" class="col-md-2 control-label">Pekerjaan</label>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" name="pekerjaan">
-                       <span class="text-danger"><?php echo form_error("pekerjaan"); ?></span>
+                      <input type="text" class="form-control" name="jatuh_tempo" value="<?php echo set_value('jatuh_tempo') ?>"  placeholder="Jatuh tempo pembayaran">
+                       <span class="text-danger"><?php echo form_error("jatuh_tempo"); ?></span>
                     </div>
                   </div>
                   <div class="col-sm-2 pull-right">

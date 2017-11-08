@@ -45,7 +45,7 @@
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Admin</span>
+              <span class="hidden-xs"><?php echo $this->session->userdata('username'); ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -53,12 +53,12 @@
                 <img src="<?php echo base_url('assets/dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Admin
+                  <?php echo $this->session->userdata('username'); ?>
                 </p>
               </li>
               <li class="user-footer">
                 <center> 
-                  <a href="#" class="btn btn-default btn-flat">Sign Out</a>
+                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Sign Out</a>
                 </center>
               </li>
             </ul>

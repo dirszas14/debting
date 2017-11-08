@@ -6,11 +6,54 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		
 	}
 
 	public function index()
 	{
-		$this->load->view('login/loginform');
+		if ($this->session->has_userdata('role')) {
+			if ($this->session->userdata('role') == "admin") {
+				echo "hallo admin";
+			}else if($this->session->userdata('role') == "debitur"){
+				echo "hallo debitur";
+			}
+		}else{
+			$this->load->view('login/loginform');	
+		}
+	}
+
+	public function validationlogin()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$where = array(
+					'username'=>$username,
+					'password'=>$password
+				);
+		$cek = $this->login_model->ceklogin('tb_debitur',$where)->num_rows();
+		if ($cek > 0) {
+			$result = $this->db->get_where('tb_debitur',$where)->row_array();
+			$data_session = array(
+								'username'=>$result['username'],
+								'id_debitur'=>$result['id_debitur'],
+								'role'=>$result['role']
+							);
+			$this->session->set_userdata($data_session);
+			if ($result['role'] == 'admin') {
+				redirect('Kreditur','refresh');
+			}else if($result['role'] == 'debitur'){
+				redirect('Debitur','refresh');
+			}
+		}else{
+			$this->session->set_flashdata('info', 'true');
+			redirect('login');
+		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('login');
 	}
 	
 }
