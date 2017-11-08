@@ -33,15 +33,17 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
+    <?php if ($this->session->flashdata('info')): ?>
+      <p class="text-danger" align="center">Password dan username salah</p>
+    <?php endif ?>
     <p class="login-box-msg">Silahkan Login Dengan Username</p>
-
-    <form action="../../index2.html" method="post">
+    <?php echo form_open('login/validationlogin', array("method"=>"post")); ?>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username">
+        <input type="text" class="form-control" placeholder="Username" name="username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" placeholder="Password" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -54,7 +56,7 @@
         </div>
         <!-- /.col -->
       </div>
-    </form>
+    <?php echo form_close();; ?>
   </div>
   <!-- /.login-box-body -->
 </div>

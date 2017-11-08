@@ -3,18 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
-	public function index()
+	public function __construct()
 	{
-		$data['fetch_data']=$this->admin_model->fetch_data_debitur();
-		
-		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
-		$this->load->view('admin/dashboard_v',$data);
-		$this->load->view('layout/footer');
+		parent::__construct();
+		if (!$this->session->has_userdata('role')) {
+			if ($this->session->userdata('role')=='debitur') {
+				redirect('debitur');
+			}
+		}else{
+			redirect('login');
+		}
 	}
 
-	public function login(){
-		$this->load->view('admin/login');
+	public function index()
+	{
+		$this->load->view('layout/header');
+		$this->load->view('layout/aside');
+		$this->load->view('admin/dashboard_v');
+		$this->load->view('layout/footer');
 	}
 
 	public function datadebitur()
@@ -54,17 +60,17 @@ class Admin extends CI_Controller {
 
 	public function registerdebitur(){
 		
-		$this->form_validation->set_rules("username", "Username","required");
-		$this->form_validation->set_rules("nama", "Nama","required");
-		$this->form_validation->set_rules("nama_barang", "Nama Barang","required");
-		$this->form_validation->set_rules("alamat", "Alamat","required");
-		$this->form_validation->set_rules("harga_barang", "Harga Barang","required");
-		$this->form_validation->set_rules("nik", "NIK","required");
-		$this->form_validation->set_rules("jatuh_tempo", "Jatuh Tempo","required");
-		$this->form_validation->set_rules("notelp", "Nomor Telepon","required");
-		$this->form_validation->set_rules("cicilan_min", "Cicilan Minimal","required");
-		$this->form_validation->set_rules("email", "E-Mail","required");
-		$this->form_validation->set_rules("pekerjaan", "Pekerjaan","required");
+		$this->form_validation->set_rules("username", "username","required|alpha_numeric|min_length[5]",array('required' => 'harap isi Username anda','alpha_numeric'=>'harus kombinasi huruf dan angka'));
+		$this->form_validation->set_rules("nama", "Nama","required|min_length[4]",array('required' => 'Harap isi username anda' ));
+		$this->form_validation->set_rules("nama_barang", "Nama Barang","required",array('required' => 'Harap Isi Nama Barang' ));
+		$this->form_validation->set_rules("alamat", "Alamat","required|min_length[10]",array('required' => 'Harap Isi Alamat Anda' ));
+		$this->form_validation->set_rules("harga_barang", "Harga Barang","required|numeric",array('required'=>'Harap Isi Harga Barang'));
+		$this->form_validation->set_rules("nik", "NIK","required|numeric|min_length[16]",array('required' => 'Harap Isi NIK' ));
+		$this->form_validation->set_rules("jatuh_tempo", "Jatuh Tempo","required|numeric",array('required' => 'Harap Isi Jatuh Tempo' ));
+		$this->form_validation->set_rules("notelp", "No Telepon","required|numeric|min_length[10]",array('required' => 'Harap Isi No Telepon' ));
+		$this->form_validation->set_rules("cicilan_min", "Minimal Cicilan","required|numeric","required",array('required' => 'Harap Isi No Telepon ' ));
+		$this->form_validation->set_rules("email", "Email","required",array('required' => 'Harap Isi Email' ));
+		$this->form_validation->set_rules("pekerjaan", "Pekerjaan","required",array('required' => 'Harap Isi Pekerjaan' ));
 
 
 		if($this->form_validation->run() == FALSE) {
@@ -75,7 +81,8 @@ class Admin extends CI_Controller {
 			$this->load->view('layout/footer');
 		} else {
 			$this->admin_model->insert_data_debitur();
-			redirect('admin','refresh');
+			$this->session->set_flashdata('info', 'true');
+			redirect(site_url("admin/datadebitur/".$pesan));
 		}
 	}
 	

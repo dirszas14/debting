@@ -23,21 +23,21 @@ class Admin_model extends CI_Model {
             "email"         =>$this->input->post("email"),
             "pekerjaan"     =>$this->input->post("pekerjaan")
             );
-        $this->db->insert("debitur",$data);
+        $this->db->insert("tb_debitur",$data);
     }
 
     public function fetch_data_debitur(){
         $this->db->select("*");
-        $this->db->from("debitur");
+        $this->db->from("tb_debitur");
         $query=$this->db->get();
         return $query;
     }
 
     public function getkodedebitur($table) { 
-            $this->db->select("RIGHT(debitur.id_debitur,3) AS kode ");
+            $this->db->select("RIGHT(tb_debitur.id_debitur,3) AS kode ");
             $this->db->order_by('id_debitur', 'DESC');
             $this->db->limit(1);
-            $query = $this->db->get('debitur');
+            $query = $this->db->get('tb_debitur');
             if($query->num_rows()>0){
                 $data = $query->row();
                 $kode = intval($data->kode)+1;
