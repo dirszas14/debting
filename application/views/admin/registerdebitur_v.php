@@ -49,9 +49,9 @@
                       <textarea name="alamat" class="form-control"  placeholder="Masukan alamat debitur"><?php echo set_value('alamat') ?></textarea>
                        <span class="text-danger"><?php echo form_error("alamat"); ?></span>
                     </div>
-                    <label for="notelp" class="col-md-2 control-label">No Telp</label>
+                    <label for="no_telp" class="col-md-2 control-label">No Telp</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="notelp" value="<?php echo set_value('notelp') ?>" placeholder="Nomor telepon debitur">
+                      <input type="text" class="form-control" name="no_telp" value="<?php echo set_value('no_telp') ?>" placeholder="Nomor telepon debitur">
                        <span class="text-danger"><?php echo form_error("notelp"); ?></span>
                     </div>
                   </div>
@@ -75,7 +75,7 @@
                     </div>
                      <label for="harga_barang" class="col-md-2 control-label">Harga Barang</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="harga_barang" value="<?php echo set_value('harga_barang') ?>" placeholder="Hara barang">
+                      <input type="text" class="form-control" name="harga_barang" value="<?php echo set_value('harga_barang') ?>" placeholder="Harga barang">
                        <span class="text-danger"><?php echo form_error("harga_barang"); ?></span>
                     </div>
                   </div>
