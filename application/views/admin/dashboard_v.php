@@ -93,9 +93,9 @@
             </a>
           </div>
         </div>
-        <div class="col-md-6 col-md-offset-3">
+       <!--  <div class="col-md-6 col-md-offset-3">
             <div id="kalender"></div>
-        </div>
+        </div> -->
          <!-- /.col -->
       </div>
     </section>
