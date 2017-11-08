@@ -18,10 +18,11 @@ class Admin_model extends CI_Model {
             "harga_barang"  =>$this->input->post("harga_barang"),
             "nik"           =>$this->input->post("nik"),
             "jatuh_tempo"   =>$this->input->post("jatuh_tempo"),
-            "no_telp"       =>$this->input->post("notelp"),
+            "no_telp"       =>$this->input->post("no_telp"),
             "cicilan_min"   =>$this->input->post("cicilan_min"),
             "email"         =>$this->input->post("email"),
-            "pekerjaan"     =>$this->input->post("pekerjaan")
+            "pekerjaan"     =>$this->input->post("pekerjaan"),
+            "role"          =>'debitur',
             );
         $this->db->insert("tb_debitur",$data);
     }
@@ -31,6 +32,37 @@ class Admin_model extends CI_Model {
         $this->db->from("tb_debitur");
         $query=$this->db->get();
         return $query;
+    }
+
+    public function fetch_detail_debitur($id_debitur)
+    {
+        $query = $this->db->get_where('tb_debitur',array('id_debitur'=>$id_debitur));
+        return $query->row_array();
+    }
+
+    public function update_debitur($id_debitur)
+    {
+        $data = array(
+            "username"      =>$this->input->post("username"),
+            "nama"          =>$this->input->post("nama"),
+            "nama_barang"   =>$this->input->post("nama_barang"),
+            "alamat"        =>$this->input->post("alamat"),
+            "harga_barang"  =>$this->input->post("harga_barang"),
+            "nik"           =>$this->input->post("nik"),
+            "jatuh_tempo"   =>$this->input->post("jatuh_tempo"),
+            "no_telp"       =>$this->input->post("no_telp"),
+            "cicilan_min"   =>$this->input->post("cicilan_min"),
+            "email"         =>$this->input->post("email"),
+            "pekerjaan"     =>$this->input->post("pekerjaan"),
+        );
+
+        $this->db->where('id_debitur',$id_debitur);
+        return $this->db->update('tb_debitur',$data);
+    }
+
+    public function delete_debitur($id_debitur)
+    {
+        return $this->db->delete('tb_debitur',array('id_debitur'=>$id_debitur));
     }
 
     public function getkodedebitur($table) { 
