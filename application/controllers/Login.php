@@ -13,9 +13,9 @@ class Login extends CI_Controller {
 	{
 		if ($this->session->has_userdata('role')) {
 			if ($this->session->userdata('role') == "admin") {
-				echo "hallo admin";
+				redirect('admin');
 			}else if($this->session->userdata('role') == "debitur"){
-				echo "hallo debitur";
+				redirect('debitur');
 			}
 		}else{
 			$this->load->view('login/loginform');	
@@ -40,9 +40,9 @@ class Login extends CI_Controller {
 							);
 			$this->session->set_userdata($data_session);
 			if ($result['role'] == 'admin') {
-				redirect('Kreditur','refresh');
+				redirect('admin');
 			}else if($result['role'] == 'debitur'){
-				redirect('Debitur','refresh');
+				redirect('debitur');
 			}
 		}else{
 			$this->session->set_flashdata('info', 'true');
