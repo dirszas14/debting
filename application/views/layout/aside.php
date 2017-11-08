@@ -18,11 +18,20 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li><a href="<?=site_url('admin')?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
-        <li><a href="<?=site_url('admin/datadebitur')?>"><i class="fa fa-book"></i> <span>Data Debitur</span></a></li>
-        <li><a href="<?=site_url('admin/registerdebitur')?>"><i class="fa fa-plus"></i> <span>Register Debitur</span></a></li>
-        <li><a href="<?=site_url('admin/konfirmasipembayaran')?>"><i class="fa fa-info"></i> <span>Konfirmasi Pembayaran </span></a></li>
-        <li><a href="<?=site_url('admin/inputpembayaran')?>"><i class="fa fa-pencil"></i> <span>Input Pembayaran</span></a></li>
+        <?php if ($this->session->userdata('role')=='admin'): ?>
+          <li><a href="<?=site_url('admin')?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
+          <li><a href="<?=site_url('admin/datadebitur')?>"><i class="fa fa-book"></i> <span>Data Debitur</span></a></li>
+          <li><a href="<?=site_url('admin/registerdebitur')?>"><i class="fa fa-plus"></i> <span>Register Debitur</span></a></li>
+          <li><a href="<?=site_url('admin/konfirmasipembayaran')?>"><i class="fa fa-info"></i> <span>Konfirmasi Pembayaran </span></a></li>
+          <li><a href="<?=site_url('admin/inputpembayaran')?>"><i class="fa fa-pencil"></i> <span>Input Pembayaran</span></a></li>
+        <?php elseif ($this->session->userdata('role')=='debitur'): ?>
+          <li><a href="<?=site_url('debitur')?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
+          <li><a href="<?=site_url('debitur/datadebitur')?>"><i class="fa fa-book"></i> <span>History Pembayaran </span></a></li>
+          <li><a href="<?=site_url('debitur/registerdebitur')?>"><i class="fa fa-upload"></i> <span> Upload Pembayaran</span></a></li>
+          <li><a href="<?=site_url('debitur/konfirmasipembayaran')?>"><i class="fa fa-pencil"></i> <span>Kirim Pesan </span></a></li>
+          <li><a href="<?=site_url('debitur/inputpembayaran')?>"><i class="fa fa-envelope"></i> <span>Pesan</span></a></li>
+        <?php endif; ?>
+        
       </ul>
       <!-- /.sidebar-menu -->
     </section>
