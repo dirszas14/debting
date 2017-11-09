@@ -52,7 +52,7 @@
                     <label for="no_telp" class="col-md-2 control-label">No Telp</label>
                     <div class="col-md-4">
                       <input type="text" class="form-control" name="no_telp" value="<?php echo set_value('no_telp') ?>" placeholder="Nomor telepon debitur">
-                       <span class="text-danger"><?php echo form_error("notelp"); ?></span>
+                       <span class="text-danger"><?php echo form_error("no_telp"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">

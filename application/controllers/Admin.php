@@ -75,7 +75,7 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules("harga_barang", "Harga Barang","required|numeric",array('required'=>'Harap Isi Harga Barang'));
 		$this->form_validation->set_rules("nik", "NIK","required|numeric|min_length[16]",array('required' => 'Harap Isi NIK' ));
 		$this->form_validation->set_rules("jatuh_tempo", "Jatuh Tempo","required|numeric",array('required' => 'Harap Isi Jatuh Tempo' ));
-		$this->form_validation->set_rules("notelp", "No Telepon","required|numeric|min_length[10]",array('required' => 'Harap Isi No Telepon' ));
+		$this->form_validation->set_rules("no_telp", "No Telepon","required|numeric|min_length[10]",array('required' => 'Harap Isi No Telepon' ));
 		$this->form_validation->set_rules("cicilan_min", "Minimal Cicilan","required|numeric","required",array('required' => 'Harap Isi No Telepon ' ));
 		$this->form_validation->set_rules("email", "Email","required",array('required' => 'Harap Isi Email' ));
 		$this->form_validation->set_rules("pekerjaan", "Pekerjaan","required",array('required' => 'Harap Isi Pekerjaan' ));
