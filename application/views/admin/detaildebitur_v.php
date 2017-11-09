@@ -36,6 +36,11 @@
                     <td><?=$fetch_data['nik']?></td>
                   </tr>
                   <tr>
+                    <td>Username</td>
+                    <td>:</td>
+                    <td><b><?=$fetch_data['username']?></b></td>
+                  </tr>
+                  <tr>
                     <td>Nama</td>
                     <td>:</td>
                     <td><?=$fetch_data['nama']?></td>
