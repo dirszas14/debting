@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fullcalendar/dist/fullcalendar.min.css')?>" >
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fullcalendar/dist/fullcalendar.print.min.css" media="print')?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/toast.css') ?>">
+  <script src="<?php echo base_url('assets/dist/js/toast.js') ?>"></script>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
