@@ -18,6 +18,7 @@ class Admin extends CI_Controller {
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
 		$this->load->view('admin/dashboard_v');
+		$this->load->view('admin/dashboardspecial_v');
 		$this->load->view('layout/footer');
 	}
 
