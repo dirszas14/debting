@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="<?=base_url('assets/plugins/Ionicons/css/ionicons.min.css')?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url("assets/dist/css/AdminLTE.min.css")?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/toast.css') ?>">
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -66,6 +67,8 @@
 <script src="<?=base_url('assets/plugins/jquery/dist/jquery.min.js')?>" > </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?=base_url('assets/plugins/bootstrap/dist/js/bootstrap.min.js')?>"></script>
+<script src="<?php echo base_url('assets/dist/js/toast.js') ?>"></script>
+  <script src="<?php echo base_url('assets/dist/js/header.js') ?>"></script>
 
 </body>
 </html>
