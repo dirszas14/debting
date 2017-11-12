@@ -23,7 +23,7 @@
                 <?php echo form_open('admin/registerdebitur',array('class'=>'form-horizontal','method'=>'post')); ?> <div class="form-group">
                     <label for="id_debitur" class="col-md-2 control-label">ID Debitur</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="iddebitur" value="<?=$kddebitur?>" readonly/>
+                      <input type="text" class="form-control" name="iddebitur" value="<?=$kddebitur?>" disabled/>
                     </div>
                     <label for="username" class="col-md-2 control-label">Username</label>
                     <div class="col-md-4">
@@ -67,6 +67,9 @@
                        <span class="text-danger"><?php echo form_error("pekerjaan"); ?></span>
                     </div>
                   </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Perhitungan</div>
+                      <div class="panel-body">
                   <div class="form-group">
                     <label for="nama_barang" class="col-md-2 control-label ">Nama Barang</label>
                     <div class="col-md-4">
@@ -75,27 +78,55 @@
                     </div>
                      <label for="harga_barang" class="col-md-2 control-label">Harga Barang</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="harga_barang" value="<?php echo set_value('harga_barang') ?>" placeholder="Harga barang">
+                      <input type="text" class="form-control" id="harga_barang" name="harga_barang" value="<?php echo set_value('harga_barang') ?>" placeholder="Harga barang">
                        <span class="text-danger"><?php echo form_error("harga_barang"); ?></span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="cicilan_min" class="col-md-2 control-label ">Minimal Cicilan</label>
+                    <label for="pembkali" class="col-md-2 control-label ">Pembayaran</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="cicilan_min" value="<?php echo set_value('cicilan_min') ?>" placeholder="Minimal cicilan bayar">
+                     <select class="form-control" name="pembkali">
+                      <option selected hidden>Pilih Untuk Pembayaran Berapa Kali</option>
+                       <option value="7">7</option>
+                       <option value="12">12</option>
+                       <option value="21">21</option>
+                       <option value="36">36</option>
+                     </select>
+
+                       <span class="text-danger"><?php echo form_error("pembkali"); ?></span>
+                    </div>
+                    <label for="tipepemb" class="col-md-2 control-label ">Tipe Pembayaran</label>
+                    <div class="col-md-4">
+                      <select class="form-control" name="tipepemb">
+                      <option selected hidden>Pilih Untuk Tipe Pembayaran</option>
+                       <option value="bulan">Mingguan</option>
+                       <option value="12">Bulanan</option>
+                     </select>
+                       <span class="text-danger"><?php echo form_error("tipepemb"); ?></span>
+                    </div>
+                  </div>
+                    <div class="form-group">
+                    <label for="jatuh_tempo" class="col-md-2 control-label">Tanggal Pendaftaran</label>
+                    <div class="col-md-3">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                      <input type="text" id="datepicker" class="form-control" name="jatuh_tempo" value="<?php echo set_value('jatuh_tempo') ?>"  placeholder="Tanggal Pendaftaran" disabled>
+                       <span class="text-danger"><?php echo form_error("jatuh_tempo"); ?></span>
+                    </div>
+                    </div>
+                  
+                  
+                  <div class="form-group">
+                    <label for="cicilan_min" class="col-md-4 control-label ">Bayar Cicilan</label>
+                    <div class="col-md-4">
+                      <input type="text" id="bayar_cicilan" class="form-control" name="cicilan_min" value="<?php echo set_value('cicilan_min') ?>" placeholder="Bayar Cicilan" disabled>
                        <span class="text-danger"><?php echo form_error("cicilan_min"); ?></span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="jatuh_tempo" class="col-md-2 control-label ">Jatuh Tempo(Hari)</label>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" name="jatuh_tempo" value="<?php echo set_value('jatuh_tempo') ?>"  placeholder="Jatuh tempo pembayaran">
-                       <span class="text-danger"><?php echo form_error("jatuh_tempo"); ?></span>
-                    </div>
                   </div>
-                  <div class="col-sm-2 pull-right">
+                  <div class="col-sm-2 pull-right tombol">
                     <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
                     <input type="reset" class="btn btn-danger" name="reset" value="Batal">
+                  </div>
                   </div>
                 <?php echo form_close(); ?>
                </div>
@@ -109,3 +140,18 @@
   </div>
   <!-- /.content-wrapper -->
 
+<script>$(function () {
+                  $("#datepicker").datepicker({ 
+                        autoclose: true, 
+                                
+                        }).datepicker('update', new Date());
+                        });
+                        </script>
+
+<!-- <script>
+  $(document).ready(function(){
+    $("#hargabarang").keyup(function(){
+        $("#bayarcicilan").allInputs($("#hargabarang").val());
+    });
+  });
+</script> -->
