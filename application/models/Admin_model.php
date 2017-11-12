@@ -11,7 +11,7 @@ class Admin_model extends CI_Model {
         $data = array(
             "id_debitur"    =>$this->input->post("iddebitur"),
             "username"      =>$this->input->post("username"),
-            "password"      =>$this->input->post("notelp"),
+            "password"      =>$this->input->post("no_telp"),
             "nama"          =>$this->input->post("nama"),
             "nama_barang"   =>$this->input->post("nama_barang"),
             "alamat"        =>$this->input->post("alamat"),
