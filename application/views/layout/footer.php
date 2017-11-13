@@ -4,6 +4,7 @@
 </div>
 
 
+<script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/bootstrap/dist/js/bootstrap.min.js')?>" ></script>
 <script src="<?php echo base_url('assets/dist/js/adminlte.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/datatables.net/js/jquery.dataTables.min.js')?>"></script>
@@ -11,6 +12,29 @@
 <script src="<?php echo base_url('assets/plugins/moment/moment.js')?>"></script>
 <script src="<?php echo base_url('assets/plugins/fullcalendar/dist/fullcalendar.min.js')?>"></script>
 <script src="<?php echo base_url('assets/dist/js/sweetalert.js') ?>"></script>
+<script src="<?php echo base_url('assets/dist/js/toast.js') ?>"></script>
+
+<script>function notifikasi(){
+	  toastr["info"]("Welcome Back, Admin!", "Welcome",{
+	    "closeButton": true,
+	  "debug": false,
+	  "newestOnTop": false,
+	  "progressBar": true,
+	  "positionClass": "toast-bottom-right",
+	  "preventDuplicates": true,
+	  "onclick": null,
+	  "showDuration": "300",
+	  "hideDuration": "1000",
+	  "timeOut": "4000",
+	  "extendedTimeOut": "1000",
+	  "showEasing": "swing",
+	  "hideEasing": "linear",
+	  "showMethod": "fadeIn",
+	  "hideMethod": "fadeOut"});
+
+	}
+</script>
+    
 
 
 <script>
@@ -51,6 +75,8 @@
 	//     var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");    
 	//     return 'Rp.' +n2.split('').reverse().join('');
 	// }
+
+
 </script>
 </body>
 </html>

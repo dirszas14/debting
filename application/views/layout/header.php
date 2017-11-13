@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Debting</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/dist/css/bootstrap.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/font-awesome/css/font-awesome.min.css') ?>">
@@ -62,7 +62,7 @@
               </li>
               <li class="user-footer">
                 <center> 
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Sign Out</a>
+                  <a href="<?php echo site_url('login?logout=signout') ?>" class="btn btn-default btn-flat" onclick="return confirm('are youe sure ?')">Sign Out</a>
                 </center>
               </li>
             </ul>
