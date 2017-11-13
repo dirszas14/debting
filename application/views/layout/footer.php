@@ -17,8 +17,25 @@
 	$(function () {
 		$('#datadebitur').DataTable()
 		$('#kalender').fullCalendar()
-	})
-
+	});
+// function decision(){
+// 	swal({
+//   title: "Are you sure?",
+//   text: "Once deleted, you will not be able to recover this imaginary file!",
+//   icon: "warning",
+//   buttons: true,
+//   dangerMode: true,
+// });
+// .then((willDelete) => {
+//   if (willDelete) {
+//     swal("Poof! Your imaginary file has been deleted!", {
+//       icon: "success",
+//     });
+//   } else {
+//     swal("Your imaginary file is safe!");
+//   }
+// });
+// }
 	// $('input[name=harga_barang]').on('input', function(e){        
 	//     $(this).val(formatCurrency(this.value.replace(/[,Rp.]/g,'')));
 	// }).on('keypress',function(e){
