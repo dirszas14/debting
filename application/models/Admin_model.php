@@ -65,6 +65,14 @@ class Admin_model extends CI_Model {
         return $this->db->delete('tb_debitur',array('id_debitur'=>$id_debitur));
     }
 
+    public function reset_password_debitur($id_debitur)
+    {
+        $data = array (
+                    'password' => $this->input->post('password')
+                );
+        $this->db->where
+    }
+
     public function getkodedebitur($table) { 
             $this->db->select("RIGHT(tb_debitur.id_debitur,3) AS kode ");
             $this->db->order_by('id_debitur', 'DESC');

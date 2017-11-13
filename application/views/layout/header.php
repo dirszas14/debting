@@ -60,7 +60,7 @@
               </li>
               <li class="user-footer">
                 <center> 
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Sign Out</a>
+                  <a href="<?php echo site_url('login?logout=signout') ?>" class="btn btn-default btn-flat" onclick="return confirm('are youe sure ?')">Sign Out</a>
                 </center>
               </li>
             </ul>
