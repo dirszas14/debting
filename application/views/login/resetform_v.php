@@ -32,7 +32,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Reset Password Anda</p>
-    <?php echo form_open('login/resetuser', array("method"=>"post")); ?>
+    <?php echo form_open('resetpassword', array("method"=>"post")); ?>
       <div class="form-group has-feedback">
         <span class="text-danger"><?php echo form_error('password') ?></span>
         <input type="password" class="form-control" placeholder="Password" name="password">
