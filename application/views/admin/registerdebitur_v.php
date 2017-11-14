@@ -109,7 +109,7 @@
                     <label for="jatuh_tempo" class="col-md-2 control-label">Tanggal Pendaftaran</label>
                     <div class="col-md-3">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                      <input type="text" id="datepicker" class="form-control" name="jatuh_tempo" value="<?php echo set_value('jatuh_tempo') ?>"  placeholder="Tanggal Pendaftaran" disabled>
+                      <input type="text" data-date-format="dd-mm-yyyy" id="datepicker" class="form-control" name="jatuh_tempo" value="<?php echo set_value('jatuh_tempo') ?>"  placeholder="Tanggal Pendaftaran" disabled>
                        <span class="text-danger"><?php echo form_error("jatuh_tempo"); ?></span>
                     </div>
                     </div>
@@ -140,13 +140,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-<script>$(function () {
-                  $("#datepicker").datepicker({ 
-                        autoclose: true, 
-                                
-                        }).datepicker('update', new Date());
-                        });
-                        </script>
+
 
 <!-- <script>
   $(document).ready(function(){
