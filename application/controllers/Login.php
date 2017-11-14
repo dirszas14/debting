@@ -26,19 +26,6 @@ class Login extends CI_Controller {
 		$this->load->view('login/loginform_v');	
 	}
 
-	public function resetuser()
-	{
-		$this->form_validation->set_rules('password', 'password', 'trim|required|min_length[8]|alpha_numeric');
-		$this->form_validation->set_rules('confirmpassword','confirmpassword','trim|required|matches[password]');
-
-		if ($this->form_validation->run() === FALSE) {
-			$this->load->view('login/resetform_v');
-		} else {
-			$id_debitur = $this->session->userdata('id_debitur');
-			$this->admin_model->reset_password_debitur($id_debitur);
-		}
-	}
-
 	public function validationlogin()
 	{
 		$username = $this->input->post('username');
@@ -55,14 +42,17 @@ class Login extends CI_Controller {
 								'username'=>$result['username'],
 								'id_debitur'=>$result['id_debitur'],
 								'nama'=>$result['nama'],
+								'resetpassword'=>'ya',
 								'role'=>$result['role']
 				);
-				redirect('login/resetuser');
+				$this->session->set_userdata($data_session);
+				redirect('resetpassword');
 			}else{
 				$data_session = array(
 								'username'=>$result['username'],
 								'id_debitur'=>$result['id_debitur'],
 								'nama'=>$result['nama'],
+								'resetpassword'=>'tidak',
 								'role'=>$result['role']
 							);
 				$this->session->set_userdata($data_session);
