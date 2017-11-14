@@ -70,7 +70,7 @@ class Admin_model extends CI_Model {
         $data = array (
                     'password' => $this->input->post('password')
                 );
-        $this->db->where
+        $this->db->where();
     }
 
     public function getkodedebitur($table) { 
@@ -91,6 +91,7 @@ class Admin_model extends CI_Model {
    } 
 
 }
+
 
 /* End of file Admin_model.php */
 /* Location: ./application/models/Admin_model.php */
