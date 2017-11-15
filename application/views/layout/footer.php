@@ -4,7 +4,7 @@
 </div>
 
 
-<script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.min.js') ?>"></script>
+
 <script src="<?php echo base_url('assets/plugins/bootstrap/dist/js/bootstrap.min.js')?>" ></script>
 <script src="<?php echo base_url('assets/dist/js/adminlte.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/datatables.net/js/jquery.dataTables.min.js')?>"></script>
@@ -36,6 +36,7 @@
 </script>
     
 <script>
+<<<<<<< HEAD
 	$('select[name=jumlah_angsuran]').change(function() {
 		var jumlah_angsuran = parseInt($(this).val());
 		var harga_barang = parseInt($('input[name=harga_barang]').val());
@@ -75,12 +76,43 @@
 
 	});
 </script>
+=======
+	$(function () {
+                  $("#datepicker").datepicker({ 
+                        autoclose: true, 
+                                
+                        }).datepicker('update', new Date());
+                        });
+                        </script>
+>>>>>>> a406ed6efedd3517a4b96e69dc32f4aeebf47830
 
 <script>
 	$(function () {
 		$('#datadebitur').DataTable()
 		$('#kalender').fullCalendar()
+<<<<<<< HEAD
 	})
+=======
+	});
+// function decision(){
+// 	swal({
+//   title: "Are you sure?",
+//   text: "Once deleted, you will not be able to recover this imaginary file!",
+//   icon: "warning",
+//   buttons: true,
+//   dangerMode: true,
+// });
+// .then((willDelete) => {
+//   if (willDelete) {
+//     swal("Poof! Your imaginary file has been deleted!", {
+//       icon: "success",
+//     });
+//   } else {
+//     swal("Your imaginary file is safe!");
+//   }
+// });
+// }
+>>>>>>> a406ed6efedd3517a4b96e69dc32f4aeebf47830
 	// $('input[name=harga_barang]').on('input', function(e){        
 	//     $(this).val(formatCurrency(this.value.replace(/[,Rp.]/g,'')));
 	// }).on('keypress',function(e){

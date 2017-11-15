@@ -96,8 +96,7 @@ class Admin_model extends CI_Model {
         $data = array (
                     'password' => $this->input->post('password')
                 );
-        $this->db->where('id_debitur',$id_debitur);
-        return $this->db->update('tb_debitur',$data);
+
     }
 
     public function getkodedebitur($table) { 
@@ -118,6 +117,7 @@ class Admin_model extends CI_Model {
    } 
 
 }
+
 
 /* End of file Admin_model.php */
 /* Location: ./application/models/Admin_model.php */
