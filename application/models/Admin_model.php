@@ -9,22 +9,38 @@ class Admin_model extends CI_Model {
 
     public function insert_data_debitur(){
         $data = array(
-            "id_debitur"    =>$this->input->post("iddebitur"),
-            "username"      =>$this->input->post("username"),
-            "password"      =>$this->input->post("no_telp"),
-            "nama"          =>$this->input->post("nama"),
-            "nama_barang"   =>$this->input->post("nama_barang"),
-            "alamat"        =>$this->input->post("alamat"),
-            "harga_barang"  =>$this->input->post("harga_barang"),
-            "nik"           =>$this->input->post("nik"),
-            "jatuh_tempo"   =>$this->input->post("jatuh_tempo"),
-            "no_telp"       =>$this->input->post("no_telp"),
-            "cicilan_min"   =>$this->input->post("cicilan_min"),
-            "email"         =>$this->input->post("email"),
-            "pekerjaan"     =>$this->input->post("pekerjaan"),
-            "role"          =>'debitur',
+            "id_debitur"            =>$this->input->post("id_debitur"),
+            "username"              =>$this->input->post("username"),
+            "password"              =>$this->input->post("no_telp"),
+            "nama"                  =>$this->input->post("nama"),
+            "nik"                   =>$this->input->post("nik"),
+            "alamat"                =>$this->input->post("alamat"),
+            "no_telp"               =>$this->input->post("no_telp"),
+            "email"                 =>$this->input->post("email"),
+            "pekerjaan"             =>$this->input->post("pekerjaan"),
+            "role"                  =>"debitur",
+
+
+            "nama_barang"           =>$this->input->post("nama_barang"),
+            "total_hargabarang"     =>$this->input->post("total_hargabarang"),
+            "tipe_pembayaran"       =>$this->input->post("tipe_pembayaran"),
+            "jumlah_angsuran"       =>$this->input->post("jumlah_angsuran"),
+            "bayar_perangsur"       =>$this->input->post("bayar_perangsur"),
+            "tanggal_pendaftaran"   =>date('Y-m-d'),
+            "tanggal_selesai_bayar" =>date('Y-m-d',strtotime($this->input->post('tanggal_selesai_bayar'))),
+
             );
-        $this->db->insert("tb_debitur",$data);
+        return $this->db->insert("tb_debitur",$data);
+    }
+
+    public function insert_pembayaran_dp()
+    {
+        $data = array(
+                    "id_debitur"     =>$this->input->post("id_debitur"),
+                    "jumlah_bayar"   =>$this->input->post("bayar_dp"),
+                    "tgl_bayar"      =>date('Y-m-d')
+                );
+        return $this->db->insert("tb_pembayaran",$data);
     }
 
     public function fetch_data_debitur(){
@@ -38,6 +54,16 @@ class Admin_model extends CI_Model {
     {
         $query = $this->db->get_where('tb_debitur',array('id_debitur'=>$id_debitur));
         return $query->row_array();
+    }
+
+    public function fetch_history_debitur($id_debitur)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_pembayaran');
+        $this->db->join('tb_debitur','tb_debitur.id_debitur = tb_pembayaran.id_debitur');
+        $this->db->where('tb_pembayaran.id_debitur', $id_debitur);
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function update_debitur($id_debitur)
