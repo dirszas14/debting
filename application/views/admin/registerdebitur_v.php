@@ -23,7 +23,7 @@
                 <?php echo form_open('admin/registerdebitur',array('class'=>'form-horizontal','method'=>'post')); ?> <div class="form-group">
                     <label for="id_debitur" class="col-md-2 control-label">ID Debitur</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="iddebitur" value="<?=$kddebitur?>" readonly/>
+                      <input type="text" class="form-control" name="id_debitur" value="<?=$kddebitur?>" readonly/>
                     </div>
                     <label for="username" class="col-md-2 control-label">Username</label>
                     <div class="col-md-4">
@@ -80,21 +80,57 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="cicilan_min" class="col-md-2 control-label ">Minimal Cicilan</label>
+                    <label for="tipe_pembayaran" class="col-md-2 control-label ">Tipe Pembayaran</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="cicilan_min" value="<?php echo set_value('cicilan_min') ?>" placeholder="Minimal cicilan bayar">
-                       <span class="text-danger"><?php echo form_error("cicilan_min"); ?></span>
+                      <select class="form-control" name="tipe_pembayaran">
+                        <option selected>Tipe Pembayaran</option>
+                        <option value="7">Perminggu</option>
+                        <option value="30">Perbulan</option>
+                      </select>
+                    </div>
+                     <label for="jumlah_angsuran" class="col-md-2 control-label">Jumlah Angsuran</label>
+                    <div class="col-md-4">
+                      <select class="form-control" name="jumlah_angsuran">
+                        <option selected>Jumlah Angsuran</option>
+                        <option value="6">6x</option>
+                        <option value="12">12x</option>
+                        <option value="18">18x</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="jatuh_tempo" class="col-md-2 control-label ">Jatuh Tempo(Hari)</label>
+                    <label for="total_hargabarang" class="col-md-2 control-label ">Total Harga Barang</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="jatuh_tempo" value="<?php echo set_value('jatuh_tempo') ?>"  placeholder="Jatuh tempo pembayaran">
-                       <span class="text-danger"><?php echo form_error("jatuh_tempo"); ?></span>
+                      <input type="text" class="form-control" name="total_hargabarang" value="<?php echo set_value('total_hargabarang') ?>" placeholder="Total Harga Barang" readonly>
+                       <span class="text-danger"><?php echo form_error("total_hargabarang"); ?></span>
+                    </div>
+                    <label for="bayar_perangsur" class="col-md-2 control-label ">Bayar Perangsur</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="bayar_perangsur"   placeholder="Bayar Perangsur" readonly>
+                       <span class="text-danger"><?php echo form_error("bayar_perangsur"); ?></span>
                     </div>
                   </div>
-                  <div class="col-sm-2 pull-right">
-                    <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
+                  <div class="form-group">
+                    <label for="bayar_dp" class="col-md-2 control-label ">Bayar DP</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="bayar_dp"   placeholder="Bayar DP" readonly>
+                       <span class="text-danger"><?php echo form_error("bayar_dp"); ?></span>
+                    </div>
+                    <label for="tanggal_pendaftaran" class="col-md-2 control-label ">Tanggal Pendaftaran</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="tanggal_pendaftaran" value="<?php echo date('d-m-Y') ?>" placeholder="Jatuh Tempo" readonly>
+                       <span class="text-danger"><?php echo form_error("tanggal_pendaftaran"); ?></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="tanggal_selesai_bayar" class="col-md-2 control-label ">Tanggal Selesai Bayar</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="tanggal_selesai_bayar"  readonly>
+                       <span class="text-danger"><?php echo form_error("tanggal_selesai_bayar"); ?></span>
+                    </div>
+                  </div>
+                 <div class="col-sm-2 pull-right">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Register">
                     <input type="reset" class="btn btn-danger" name="reset" value="Batal">
                   </div>
                 <?php echo form_close(); ?>
